@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--HomeVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="HomeVC" id="BYZ-38-t0r" customClass="HomeVC" customModule="RestartTechnologyTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VlQ-DP-Amn">
+                                <rect key="frame" x="0.0" y="170" width="414" height="726"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="jXv-Nb-ern"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="DUz-nA-hpD"/>
+                                </connections>
+                            </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big_header" translatesAutoresizingMaskIntoConstraints="NO" id="LV0-VJ-XbS">
+                                <rect key="frame" x="0.0" y="-80" width="414" height="280"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="SK8-0M-vbh"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="VlQ-DP-Amn" secondAttribute="trailing" id="1bH-hA-S3e"/>
+                            <constraint firstItem="VlQ-DP-Amn" firstAttribute="top" secondItem="LV0-VJ-XbS" secondAttribute="bottom" constant="-30" id="6Ve-tk-pgO"/>
+                            <constraint firstItem="VlQ-DP-Amn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="B5z-Mf-8jq"/>
+                            <constraint firstItem="LV0-VJ-XbS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Mfc-TT-pdr"/>
+                            <constraint firstItem="LV0-VJ-XbS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-80" id="g4o-Xi-BSt"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="VlQ-DP-Amn" secondAttribute="bottom" id="gej-Pm-PCR"/>
+                            <constraint firstAttribute="trailing" secondItem="LV0-VJ-XbS" secondAttribute="trailing" id="wHB-G6-Nd3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="homeContentTableView" destination="VlQ-DP-Amn" id="cRI-PX-DEU"/>
+                        <outlet property="viewModel" destination="O4B-Ig-qho" id="sHJ-an-E3n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="O4B-Ig-qho" customClass="HomeViewModel" customModule="RestartTechnologyTask" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="102.45535714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="big_header" width="375" height="280"/>
+    </resources>
+</document>
