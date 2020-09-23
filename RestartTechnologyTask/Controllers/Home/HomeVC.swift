@@ -14,6 +14,7 @@ class HomeVC: BaseVC {
     
     //MARK: - Outlets
     @IBOutlet weak var homeContentTableView: UITableView!
+    @IBOutlet weak var searchContainerView: UIView!
     @IBOutlet weak var viewModel: HomeViewModel!
     
     //MARK: - Vars
@@ -387,6 +388,7 @@ class HomeVC: BaseVC {
     }
     
     override func setupOutlets() {
+        self.searchContainerView.cornerRedus(value: 10)
         self.homeContentTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 80, right: 0)
         self.homeContentTableView.register(UINib(nibName: self.cellIndentifier, bundle: nil), forCellReuseIdentifier: self.cellIndentifier)
     }
@@ -460,12 +462,15 @@ class HomeVC: BaseVC {
     
     private func getHomeContentRequest(){
         
+        self.startLoading()
         self.viewModel.homeContentRequest()?.asObservable().subscribe(onNext: { (response) in
             
+            self.endLoading()
             self.homeContent = response
             self.homeContentTableView.reloadData()
             
         }, onError: { (error) in
+            self.endLoading()
             print(error.localizedDescription)
         }, onCompleted: {
             print("Completed")

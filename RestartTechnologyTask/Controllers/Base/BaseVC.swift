@@ -21,5 +21,16 @@ class BaseVC: UIViewController {
         
     }
     
-    func setupOutlets(){}
+    func setupOutlets(){
+        
+    }
+    
+    func startLoading(){
+        let activityData = ActivityData()
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
+    }
+    
+    func endLoading(){
+        NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+    }
 }

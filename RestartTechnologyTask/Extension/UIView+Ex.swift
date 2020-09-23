@@ -22,4 +22,9 @@ extension UIView{
         self.layer.cornerRadius = width / 2
         self.clipsToBounds = true
     }
+    
+    func cornerRedus(value: CGFloat){
+        self.layer.cornerRadius = value
+        self.clipsToBounds = true
+    }
 }
