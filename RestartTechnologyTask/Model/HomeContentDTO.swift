@@ -27,7 +27,7 @@ struct Attraction: Codable {
     let id: Int?
     let name: String?
     let is_active: Int?
-    let description, lat, lng, arabic_name: String?
+    let description, short_description, lat, lng, arabic_name: String?
     let working_hours: [WorkingHour]?
     let photos: [String]?
     let profile_photo: String?
@@ -85,6 +85,7 @@ struct Event: Codable {
     let city_id: Int?
     let address: String?
     let views: Int?
+    let photos: [String]?
     let start_date: String?
     let end_date, price_per_day, whole_price, ticket_price: String?
     let video_preview: String?

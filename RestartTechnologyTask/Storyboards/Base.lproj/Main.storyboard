@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,17 +29,67 @@
                                     <constraint firstAttribute="height" constant="280" id="SK8-0M-vbh"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vwc-TB-6Sj">
+                                <rect key="frame" x="0.0" y="876" width="414" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cPG-33-CCq"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="bottom-bar_curvy" translatesAutoresizingMaskIntoConstraints="NO" id="bKG-cT-h51">
+                                <rect key="frame" x="0.0" y="814" width="414" height="82"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="82" id="URe-40-hB4"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="XCH-DX-e6p">
+                                <rect key="frame" x="35" y="840" width="89" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5m-RH-IOB">
+                                        <rect key="frame" x="0.0" y="0.0" width="29" height="30"/>
+                                        <state key="normal" image="Home_bottom_icon"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jaB-Nd-eVH">
+                                        <rect key="frame" x="59" y="0.0" width="30" height="30"/>
+                                        <state key="normal" image="search_grey_bottom_icon"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ap2-KD-J1r">
+                                <rect key="frame" x="299" y="840" width="80" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3D-T5-1Oj">
+                                        <rect key="frame" x="0.0" y="0.0" width="28" height="30"/>
+                                        <state key="normal" image="Group 100"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xuX-R0-blP">
+                                        <rect key="frame" x="58" y="0.0" width="22" height="30"/>
+                                        <state key="normal" image="profile_grey_bottom_icon"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="VlQ-DP-Amn" secondAttribute="trailing" id="1bH-hA-S3e"/>
                             <constraint firstItem="VlQ-DP-Amn" firstAttribute="top" secondItem="LV0-VJ-XbS" secondAttribute="bottom" constant="-30" id="6Ve-tk-pgO"/>
                             <constraint firstItem="VlQ-DP-Amn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="B5z-Mf-8jq"/>
+                            <constraint firstItem="XCH-DX-e6p" firstAttribute="centerY" secondItem="bKG-cT-h51" secondAttribute="centerY" id="MLl-O7-mUS"/>
                             <constraint firstItem="LV0-VJ-XbS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Mfc-TT-pdr"/>
+                            <constraint firstItem="DN3-GY-3US" firstAttribute="trailing" secondItem="bKG-cT-h51" secondAttribute="trailing" id="Qjv-qE-uTn"/>
+                            <constraint firstAttribute="bottom" secondItem="vwc-TB-6Sj" secondAttribute="bottom" constant="-10" id="Tqx-51-ugf"/>
+                            <constraint firstItem="DN3-GY-3US" firstAttribute="trailing" secondItem="vwc-TB-6Sj" secondAttribute="trailing" id="V2I-Ng-AIR"/>
+                            <constraint firstItem="XCH-DX-e6p" firstAttribute="leading" secondItem="DN3-GY-3US" secondAttribute="leading" constant="35" id="ai3-8M-04N"/>
+                            <constraint firstItem="bKG-cT-h51" firstAttribute="leading" secondItem="DN3-GY-3US" secondAttribute="leading" id="eYt-1x-Pag"/>
                             <constraint firstItem="LV0-VJ-XbS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-80" id="g4o-Xi-BSt"/>
                             <constraint firstAttribute="bottomMargin" secondItem="VlQ-DP-Amn" secondAttribute="bottom" id="gej-Pm-PCR"/>
+                            <constraint firstAttribute="bottom" secondItem="bKG-cT-h51" secondAttribute="bottom" id="jZ8-Mn-8iu"/>
+                            <constraint firstItem="vwc-TB-6Sj" firstAttribute="leading" secondItem="DN3-GY-3US" secondAttribute="leading" id="mfY-TT-uD6"/>
+                            <constraint firstItem="DN3-GY-3US" firstAttribute="trailing" secondItem="ap2-KD-J1r" secondAttribute="trailing" constant="35" id="nLZ-Ym-ZQa"/>
+                            <constraint firstItem="ap2-KD-J1r" firstAttribute="centerY" secondItem="bKG-cT-h51" secondAttribute="centerY" id="olo-0r-gj8"/>
                             <constraint firstAttribute="trailing" secondItem="LV0-VJ-XbS" secondAttribute="trailing" id="wHB-G6-Nd3"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="DN3-GY-3US"/>
                     </view>
                     <connections>
                         <outlet property="homeContentTableView" destination="VlQ-DP-Amn" id="cRI-PX-DEU"/>
@@ -52,6 +103,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Group 100" width="28" height="28"/>
+        <image name="Home_bottom_icon" width="29" height="29"/>
         <image name="big_header" width="375" height="280"/>
+        <image name="bottom-bar_curvy" width="387" height="68"/>
+        <image name="profile_grey_bottom_icon" width="22" height="30"/>
+        <image name="search_grey_bottom_icon" width="30" height="30"/>
     </resources>
 </document>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -9,11 +9,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="188" id="KGk-i7-Jjw" customClass="HomeContentCell" customModule="RestartTechnologyTask" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="188"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="281" id="KGk-i7-Jjw" customClass="HomeContentCell" customModule="RestartTechnologyTask" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="281"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="188"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="281"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotspot_icon" translatesAutoresizingMaskIntoConstraints="NO" id="RKP-fZ-RIK">
@@ -38,7 +38,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View All" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Bj-5d-zai">
                                         <rect key="frame" x="0.0" y="1" width="38.5" height="12"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <color key="textColor" red="0.37646311519999998" green="0.080305717890000003" blue="0.33301782610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.37647058823529411" green="0.078431372549019607" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="view_all_icon" translatesAutoresizingMaskIntoConstraints="NO" id="o3R-pT-Jv3">
@@ -71,19 +71,39 @@
                             <constraint firstAttribute="width" constant="60.5" id="sCG-w6-Mw8"/>
                         </constraints>
                     </stackView>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="PKd-mk-SLN">
+                        <rect key="frame" x="16" y="65" width="288" height="216"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cKs-Go-StR">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="6zT-aJ-iVp" firstAttribute="centerY" secondItem="ZrO-hY-6ve" secondAttribute="centerY" id="0uQ-Ny-ZnY"/>
                     <constraint firstAttribute="trailing" secondItem="6zT-aJ-iVp" secondAttribute="trailing" constant="16" id="1Yr-q3-Pdh"/>
+                    <constraint firstItem="PKd-mk-SLN" firstAttribute="leading" secondItem="RKP-fZ-RIK" secondAttribute="leading" id="589-5J-rB1"/>
+                    <constraint firstItem="PKd-mk-SLN" firstAttribute="top" secondItem="RKP-fZ-RIK" secondAttribute="bottom" constant="10" id="9EJ-bP-XXc"/>
+                    <constraint firstAttribute="bottom" secondItem="PKd-mk-SLN" secondAttribute="bottom" id="DjK-A1-DPE"/>
                     <constraint firstItem="ZrO-hY-6ve" firstAttribute="leading" secondItem="RKP-fZ-RIK" secondAttribute="trailing" constant="8" id="F5d-5w-D0Z"/>
+                    <constraint firstItem="PKd-mk-SLN" firstAttribute="trailing" secondItem="5t4-E5-yke" secondAttribute="trailing" id="fwl-9g-764"/>
                     <constraint firstItem="RKP-fZ-RIK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="nGr-xx-lJw"/>
                     <constraint firstItem="ZrO-hY-6ve" firstAttribute="centerY" secondItem="RKP-fZ-RIK" secondAttribute="centerY" id="qOI-03-h2c"/>
                     <constraint firstItem="RKP-fZ-RIK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="35" id="tw9-Af-tMH"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="137.68115942028987" y="141.29464285714286"/>
+            <connections>
+                <outlet property="headerImage" destination="RKP-fZ-RIK" id="Q9Z-DG-6rm"/>
+                <outlet property="headerLbl" destination="ZrO-hY-6ve" id="JMj-7L-ayt"/>
+                <outlet property="subContentCollectionView" destination="PKd-mk-SLN" id="5Ar-G4-bWO"/>
+                <outlet property="viewAllBtn" destination="5t4-E5-yke" id="8R1-Qz-OWg"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="172.43303571428569"/>
         </tableViewCell>
     </objects>
     <resources>

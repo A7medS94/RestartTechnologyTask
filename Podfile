@@ -9,5 +9,6 @@ target 'RestartTechnologyTask' do
 	pod 'SnapKit'
 	pod 'IQKeyboardManagerSwift'
 	pod 'Moya/RxSwift'
+	pod 'Kingfisher'
 
 end

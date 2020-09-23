@@ -195,7 +195,7 @@ class HomeVC: BaseVC {
     
     let cellIndentifier = "HomeContentCell"
     var startAnimating: Bool = false
-    let containerViewAlpha: CGFloat = 0.2
+    let containerViewAlpha: CGFloat = 0.5
     let disposeBag = DisposeBag()
     var homeContent: HomeContentDTO?
     
@@ -203,6 +203,7 @@ class HomeVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.getHomeContentRequest()
     }
     
     //MARK: - Methods
@@ -386,6 +387,7 @@ class HomeVC: BaseVC {
     }
     
     override func setupOutlets() {
+        self.homeContentTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 80, right: 0)
         self.homeContentTableView.register(UINib(nibName: self.cellIndentifier, bundle: nil), forCellReuseIdentifier: self.cellIndentifier)
     }
     
@@ -460,6 +462,9 @@ class HomeVC: BaseVC {
         
         self.viewModel.homeContentRequest()?.asObservable().subscribe(onNext: { (response) in
             
+            self.homeContent = response
+            self.homeContentTableView.reloadData()
+            
         }, onError: { (error) in
             print(error.localizedDescription)
         }, onCompleted: {
@@ -501,6 +506,20 @@ class HomeVC: BaseVC {
             print("Map pressed")
         }
     }
+    
+    @objc private func viewAllBtnDidTapped(_ sender: UIButton){
+        
+        switch sender.tag {
+        case 0:
+            print("Hotspots view all did tapped")
+        case 1:
+            print("Events view all did tapped")
+        case 2:
+            print("Attractions view all did tapped")
+        default:
+            return
+        }
+    }
 }
 
 
@@ -514,6 +533,10 @@ extension HomeVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIndentifier, for: indexPath) as? HomeContentCell else {return UITableViewCell()}
         
+        cell.homeContent = self.homeContent
+        cell.viewAllBtn.tag = indexPath.row
+        cell.viewAllBtn.addTarget(self, action: #selector(self.viewAllBtnDidTapped(_:)), for: .touchUpInside)
+        
         if indexPath.row == 0{
             cell.homeContentType = .hotspots
         }
@@ -524,6 +547,8 @@ extension HomeVC: UITableViewDataSource{
             cell.homeContentType = .attractions
         }
         
+        cell.cellConfig()
+        
         return cell
     }
 }
@@ -532,7 +557,7 @@ extension HomeVC: UITableViewDataSource{
 extension HomeVC: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 65 + 300
     }
 }
 
